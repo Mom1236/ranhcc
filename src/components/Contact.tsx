@@ -11,6 +11,10 @@ const Contact = () => {
     message: ''
   });
 
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string }>(
+    { type: null, message: '' }
+  );
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -20,30 +24,21 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
       if (res.ok) {
-        alert("✅ Quote request sent! We’ll contact you soon.");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          propertySize: "",
-          message: "",
-        });
+        setStatus({ type: "success", message: "Your request was sent successfully! We’ll contact you soon." });
+        setFormData({ name: "", email: "", phone: "", service: "", propertySize: "", message: "" });
       } else {
-        alert("❌ Something went wrong. Please try again later.");
+        const data = await res.json().catch(() => ({}));
+        setStatus({ type: "error", message: data.error || "Something went wrong. Please try again later." });
       }
     } catch (err) {
-      console.error(err);
-      alert("⚠️ Network error. Please try again.");
+      setStatus({ type: "error", message: "Network error. Please try again." });
     }
   };
 
@@ -282,7 +277,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full btn-primary text-lg group"
+                className="w-full rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-white font-semibold shadow-md transition-transform transform hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 <span className="flex items-center justify-center space-x-2">
                   <Send size={20} className="group-hover:animate-pulse" />
@@ -293,7 +288,12 @@ const Contact = () => {
               <p className="text-sm text-gray-500 text-center leading-relaxed">
                 * Required fields. We typically respond within <span className="font-bold text-blue-600">2 hours</span> during business hours with your detailed quote.
               </p>
-            </form>
+            {status.type && (
+          <div className={`mt-4 p-3 rounded-md text-sm ${status.type === 'success' ? 'bg-green-50 text-green-700 border border-green-300' : 'bg-red-50 text-red-700 border border-red-300'}`}>
+            {status.type === 'success' ? '✅ ' : '❌ '}{status.message}
+          </div>
+        )}
+      </form>
           </div>
         </div>
       </div>

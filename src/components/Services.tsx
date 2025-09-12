@@ -114,29 +114,7 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="card p-12 text-center fade-in-up stagger-6">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            Need a Custom Solution?
-          </h3>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Every property is unique. Contact us for a personalized quote and service plan 
-            tailored to your specific needs and budget.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-primary text-lg"
-            >
-              Get Free Estimate
-            </button>
-            <a 
-              href="tel:+1-346-401-0323"
-              className="flex items-center justify-center space-x-2 btn-secondary text-lg"
-            >
-              <Phone size={20} />
-              <span>Call Now</span>
-            </a>
-          </div>
+        
         </div>
       </div>
     </section>
