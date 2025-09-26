@@ -28,9 +28,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto container-padding flex items-center justify-between py-4">
         <div className="flex items-center space-x-4">
               <img 
-                src="https://i.imgur.com/PIxWxVK.jpeg"
+                src="https://i.imgur.com/PIxWxVK.png"
                 alt="Rancher Services Logo"
-                className="w-12 h-12 rounded-lg object-cover"
+                className="w-20 h-20 rounded-lg object-cover"
               />
               <div>
                 <h1 className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${
