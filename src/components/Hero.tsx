@@ -93,7 +93,7 @@ const Hero = () => {
           <div className="relative fade-in-up stagger-3 lg:block hidden">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-large relative float">
               <img
-                src="willwashing.png"
+                src="https://i.imgur.com/pr69gmd.jpeg"
                 alt="Professional pressure washing team at work"
                 className="w-full h-full object-cover"
               />
