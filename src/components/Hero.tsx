@@ -66,11 +66,11 @@ const Hero = () => {
                 Get Free Quote
               </button>
               <a 
-                href="tel:+1-346-401-0323"
+                href="tel:+1-346-210-0000"
                 className="flex items-center justify-center space-x-3 glass text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-300 border border-white/20"
               >
                 <Phone size={20} />
-                <span>(346) 401-0323</span>
+                <span>(346) 210-0000</span>
               </a>
             </div>
 
