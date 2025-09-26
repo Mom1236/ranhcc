@@ -15,7 +15,7 @@ const About = () => {
     "Better Business Bureau A+ Rating",
     "PWNA Certified Professional",
     "Commercial & Residential Specialist",
-    "Emergency Response Available 24/7"
+    "Emergency Response Available"
   ];
 
   return (
