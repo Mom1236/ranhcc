@@ -51,8 +51,8 @@ const Footer = () => {
                   <Phone className="text-amber-400" size={18} />
                 </div>
                 <div>
-                  <div className="text-white/60 text-sm">Call or Text 24/7</div>
-                  <a href="tel:+1-346-401-0323" className="text-white font-bold text-lg hover:text-amber-400 transition-colors">
+                  <div className="text-white/60 text-sm">Text</div>
+                  <a href="tel:+1-346-210-0000" className="text-white font-bold text-lg hover:text-amber-400 transition-colors">
                     (346) 401-0323
                   </a>
                 </div>
